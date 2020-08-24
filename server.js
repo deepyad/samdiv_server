@@ -2,6 +2,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const path = require('path')
 const http = require('http')
 const app = express()
 
@@ -32,8 +33,10 @@ app.use(function(req, res, next) {
 // Allow the app to accept JSON on req.body
 app.use(express.json())
 
-app.use('/', express.static(__dirname + '/public'));
-app.use('/admin', express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Handle Comment
 app.post('/saveComment', blogController.setComment)

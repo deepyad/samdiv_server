@@ -16,7 +16,8 @@
     "express": "^4.16.4",
     "forever": "^0.15.3",
     "handlebars": "*",
-    "mongoose": "^5.4.1"
+    "mongoose": "^5.4.1",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^1.18.9",
