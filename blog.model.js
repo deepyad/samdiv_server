@@ -6,15 +6,15 @@ const fields = {
   blogTitle: {
     type: String
   },
-  blogDescription: {
+  blogContent: {
     type: String
   },
-  blogImage: {
-    type: String
-  },
-  blogOtherImage: {
-    type: String
-  },
+  // blogImage: {
+  //   type: String
+  // },
+  // blogOtherImage: {
+  //   type: String
+  // },
   curDate: {
     type: String
   }
