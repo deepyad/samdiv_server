@@ -170,7 +170,7 @@ function _getBlogAndComment(blog_id, res) {
 
             results.commentData = resJson
 
-            UserComment.count({}, function (error, numOfDocs) {
+            UserComment.count({blogId: blog_id, commentAllow: true}, function (error, numOfDocs) {
                 if (error) return callback(error)
 
                 results.commentCount = numOfDocs
