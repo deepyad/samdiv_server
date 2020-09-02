@@ -38,9 +38,9 @@ app.use(express.urlencoded({limit: '50mb'}));
 // Allow the app to accept JSON on req.body
 app.use(express.json())
 
-app.use(express.static(path.join(__dirname, "build")))
+app.use(express.static(path.join(__dirname, "public")))
 app.get("/*", function (req, res) {
-    res.sendFile(path.join(__dirname, "build", "index.html"))
+    res.sendFile(path.join(__dirname, "public", "index.html"))
 })
 
 // abstracts function to upload a file returning a promise

@@ -1,4 +1,4 @@
-exports.PORT = process.env.PORT || 3334;
+exports.PORT = process.env.PORT || 3000;
 
 exports.DB_URL = process.env.NODE_ENV === 'production'
   ? process.env.DB_URL
