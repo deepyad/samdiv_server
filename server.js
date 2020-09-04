@@ -90,6 +90,7 @@ app.post("/getBlogWithID", blogController.getBlogWithID)
 app.post("/getBlogList", blogController.getBlogList)
 app.post("/insertBlog", blogController.insertBlog)
 app.post("/updateBlog", blogController.updateBlog)
+app.post("/deleteBlogWithID", blogController.deleteBlogWithID)
 
 // Handle Like
 app.post("/getLikeCount", blogController.getLikeCount)

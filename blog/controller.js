@@ -190,10 +190,26 @@ exports.getBlogWithID = (req, res) => {
 }
 
 exports.getBlogList = (req, res) => {
-    Blog.find({}, function (err, result) {
-        if (err) throw err
-        res.json(result)
+    _getBlogList(res)
+}
+
+function _getBlogList(res) {
+    Blog.find()
+        .sort({ _id: -1 })
+        .exec(function (err, result) {
+            if (err) throw console.log("Error in getBlogList : ", err)
+            
+            res.json(result)
+        })
+}
+exports.deleteBlogWithID = async (req, res) => {
+    const { deleteId } = req.body
+
+    Blog.deleteOne({
+        _id: deleteId,
     })
+    .then(() => _getBlogList(res))
+    .catch((err) => console.log("DeleteComment err : ", err))
 }
 
 exports.insertBlog = (req, res) => {
